@@ -1,0 +1,196 @@
+:root {
+    --cl-primary-1: #2F5D62;
+    --cl-primary-2: #5E8B7E;
+    --cl-primary-3: #A7C4BC;
+    --cl-primary-4: #DFEEEA;
+    --cl-gray-1: #A19882;
+    --cl-gray-2: #C2B8A3;
+    --cl-gray-3: #E6DDC6;
+    --cl-gray-4: #FEF7DC;
+    --cl-red: #B22727;
+    --cl-orange: #EE5007;
+    --cl-yellow: #F9D923;
+    --cl-green: #6BCB77;
+    --letter-spacing: 1.1;
+    --dark-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    --light-shadow: 5px 5px 10px rgba(255, 255, 255, 0.8);
+    --radius: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--cl-primary-1);
+    color: var(--cl-gray-4);
+}
+
+.header {
+    background-color: var(--cl-primary-2);
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    box-shadow: var(--dark-shadow);
+}
+
+.header h3 {
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
+    text-shadow: var(--dark-shadow);
+}
+
+.header a {
+    text-decoration: 0;
+    color: var(--cl-primary-4);
+}
+
+.form input {
+    width: 30px;
+    height: 1.5rem;
+    background-color: var(--cl-primary-1);
+    border: 0;
+    border-radius: 1rem;
+    color: var(--cl-gray-4);
+    padding: 0 0.5rem;
+}
+
+.form input:focus {
+    outline: 0;
+    width: 150px;
+    padding: 0 1rem;
+}
+
+@media screen and (min-width:810px) {
+    .header {
+        padding: 1rem 2rem;
+    }
+}
+
+/* loader */
+.loader {
+    display: none;
+}
+
+.lds-facebook.show {
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 2rem auto;
+}
+
+.lds-facebook.show div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: var(--cl-primary-3);
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook.show div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+}
+
+.lds-facebook.show div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+}
+
+.lds-facebook.show div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+}
+
+@keyframes lds-facebook {
+    0% {
+        top: 8px;
+        height: 64px;
+    }
+
+    50%,
+    100% {
+        top: 24px;
+        height: 32px;
+    }
+}
+
+/* movie list */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin: 1rem auto;
+    width: 90vw;
+}
+
+
+.movie {
+    width: 250px;
+    background-color: var(--cl-primary-2);
+    box-shadow: var(--dark-shadow);
+    border-radius: 1px;
+    margin: 1rem auto;
+    position: relative;
+}
+
+.movie .overview {
+    display: none;
+    transition: linear ease-in-out 5s;
+}
+
+.movie:hover .overview {
+    display: block;
+    background-color: #fff;
+    color: var(--cl-gray-1);
+    padding: 0.75rem 0.5rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.movie img {
+    width: 100%;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0.5rem;
+    align-items: center;
+}
+
+.info span {
+    background-color: var(--cl-primary-1);
+    padding: 0.25rem;
+    border-radius: var(--radius);
+    font-weight: bold;
+}
+
+.info span.green {
+    color: var(--cl-green);
+}
+
+.info span.orange {
+    color: var(--cl-orange);
+}
+
+.info span.red {
+    color: var(--cl-red);
+}
+
+/* err msg */
+
+.err {
+    text-align: center;
+    margin: 3rem;
+    color: var(--cl-primary-4);
+}
