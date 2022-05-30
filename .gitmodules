@@ -1,3 +1,3 @@
 [submodule "path_to_module"] 
   path = 06-movie-douban
-  url = //https://github.com/daria2023/vanilla-JS-projects.git/
+  url = git://github.com/daria2023/vanilla-JS-projects.git/
