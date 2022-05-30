@@ -1,0 +1,119 @@
+:root {
+    --cl-primary-1: #85586F;
+    --cl-primary-2:#AC7D88;
+    --cl-primary-3:#DEB6AB;
+    --cl-primary-4:#F8ECD1;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: #85586f;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, #85586f 0%, #ac7d88 50%, #deb6ab 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #85586f 0%, #ac7d88 50%, #deb6ab 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #85586f 0%, #ac7d88 50%, #deb6ab 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#85586f', endColorstr='#deb6ab', GradientType=1);
+        /* IE6-9 fallback on horizontal gradient */
+    color:var(--cl-primary-4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    position: fixed;
+    top: 1.5rem;
+    left: 1rem;
+}
+.form input {
+    width: 180px;
+    padding: 0.5rem 1rem;
+    border: 0;
+}
+
+.form input:focus {    
+    outline: none;
+    background-color: #fff;
+}
+
+.container {
+    background-color: var(--cl-primary-2);
+    width: 80vw;
+    max-width: 620px;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user {
+    display: flex;
+    padding: 1rem;
+}
+
+.user img { 
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid var(--cl-primary-1);
+}
+.user-info {
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-right: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    p {
+        font-size: 0.75rem;
+    }
+    
+}
+.user-info .user-data {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.user-info .tag{
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.user-info .user-data li{
+    text-align: center;
+}
+
+.repos h4{
+    text-transform: capitalize;
+}
+
+.repo-ls {
+    margin-top:1rem;
+    display: flex;
+    gap:0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.75rem;
+}
+
+.repo-ls span {
+    background-color: var(--cl-primary-1);
+    border: 0;
+    border-radius: 3px;
+    padding: 0.25rem;
+}
+.repo-ls a {
+    text-decoration: none;
+    color:var(--cl-primary-4);
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h3 class="header">password generator</h3>
+        <div class="generator">
+            <span class="output"></span>
+            <button class="copy-btn">📋</button>
+            <p class="msg">copied to the clipboard</p>
+        </div>
+        <div class="opitions">
+            <div class="opition">
+                <label for='length'>password number</label>
+                <input id="length" type="number" min="5" max="40" value="5">
+            </div>
+            <div class="opition">
+                <label for='uppercase'>contain uppercase</label>
+                <input id="uppercase" type="checkbox">
+            </div>
+            <div class="opition">
+                <label for='lowercase'>contain lowercase</label>
+                <input id="lowercase" type="checkbox">
+            </div>
+            <div class="opition">
+                <label for='numbers'>contain numbers</label>
+                <input id="numbers" type="checkbox">
+            </div>
+            <div class="opition">
+                <label for='symbols'>contain symbols</label>
+                <input id="symbols" type="checkbox">
+            </div>
+            <button class="submit-btn">generator</button>
+        </div>
+    </div>
+    <script src='index.js'></script>
+</body>
+</html>
