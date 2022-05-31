@@ -7,8 +7,10 @@ const loader = document.querySelector(".loader");
 const API_KEY = "api_key=8291278148d144f4fb1e19c044ceafe3";
 
 const popularityURL =
-  "https://api.wmdb.tv/api/v1/top?type=Douban&skip=0&limit=50&lang=Cn";
+  "https://api.wmdb.tv/api/v1/top?type=Douban&skip=0&limit=250&lang=Cn";
 const searchURL = "https://api.wmdb.tv/api/v1/movie/search?lang=Cn&q=";
+
+let page = 0;
 
 const fetchData = async (url) => {
   loader.classList.add("show");
@@ -16,7 +18,8 @@ const fetchData = async (url) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    listMovie(data);
+    const splitedMovies = splitPages(data);
+    renderSplitedMovies(splitedMovies,page);
     loader.classList.remove("show");
   } catch (error) {
     console.log(error);
@@ -58,6 +61,53 @@ function decideColor(num) {
     return "red";
   }
 }
+
+
+function splitPages(movies) {
+  let moviesPerPage = 50;
+  let pages = Math.ceil (movies.length / moviesPerPage);
+  let newMovies = Array.from({length: pages},(_, index) => {
+    let start = index * moviesPerPage;
+    return movies.slice(start, start + moviesPerPage);
+  })
+  return newMovies;
+}
+
+function renderSplitedMovies(movies,page) {
+
+  listMovie(movies[page]);
+  let btnsDiv = document.createElement('div');
+  btnsDiv.classList.add('btns');
+  
+  movies.map((movie,idx)=> {
+    let pageBtn = document.createElement('button');
+    pageBtn.classList.add('page-btn');
+    pageBtn.innerHTML = `${idx + 1}`;
+    
+    btnsDiv.appendChild(pageBtn);
+  })
+  const pageBtns = btnsDiv.querySelectorAll('.page-btn')
+  checkBtnActive(pageBtns,page);
+
+  pageBtns.forEach(btn => {
+    btn.addEventListener('click',()=>{      
+      page = +(btn.innerHTML) - 1;
+      container.innerHTML = '';
+      listMovie(movies[page]);
+      checkBtnActive(pageBtns,page);
+    })
+  })
+  document.body.appendChild(btnsDiv);
+}
+
+function checkBtnActive(btns,page) {
+  btns.forEach(btn => {
+    if(+btn.innerHTML === page + 1) {
+      btn.classList.add('active');
+    } else {btn.classList.remove('active')}
+  })
+}
+
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();

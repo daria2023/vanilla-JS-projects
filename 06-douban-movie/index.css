@@ -194,3 +194,22 @@ body {
     margin: 3rem;
     color: var(--cl-primary-4);
 }
+
+.btns {
+    text-align: center;
+}
+
+.btns button {
+    background-color: transparent;
+    border: 1px solid var(--cl-primary-2);
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    border-radius: 3px;
+    color: var(--cl-primary-4);
+    cursor: pointer;
+}
+
+.page-btn.active {
+    background-color: var(--cl-primary-4);
+    color:var(--cl-primary-1);
+}
