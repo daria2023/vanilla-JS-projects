@@ -3,6 +3,7 @@ const input = document.querySelector(".search-input");
 const moviesArea = document.querySelector(".movies");
 const container = document.querySelector(".container");
 const loader = document.querySelector(".loader");
+const btnsContainer = document.querySelector('.pages-container');
 
 const API_KEY = "api_key=8291278148d144f4fb1e19c044ceafe3";
 
@@ -15,6 +16,7 @@ let page = 0;
 const fetchData = async (url) => {
   loader.classList.add("show");
   container.innerHTML = "";
+  btnsContainer.innerHTML = ''
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -97,7 +99,7 @@ function renderSplitedMovies(movies,page) {
       checkBtnActive(pageBtns,page);
     })
   })
-  document.body.appendChild(btnsDiv);
+  btnsContainer.appendChild(btnsDiv);
 }
 
 function checkBtnActive(btns,page) {
@@ -114,7 +116,6 @@ form.addEventListener("submit", (e) => {
   let term = input.value;
   fetchData(searchURL + term);
   input.value = "";
-  document.querySelector('.btns').innerHTML = '';
 });
 
 fetchData(popularityURL);
