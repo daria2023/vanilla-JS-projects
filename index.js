@@ -55,6 +55,12 @@ const data = [
         des:'using random functions generate random strongly password',
         img: './images/password-app.png',
         url: 'https://daria2023.github.io/vanilla-JS-projects/09-password-generator/',   
+    },{
+        id: 9,
+        title: 'web-downloader',
+        des:'using file address to download files',
+        img: './images/web-downloader.png',
+        url: 'https://daria2023.github.io/vanilla-JS-projects/10-web-downloader/',   
     },
 ]
 

@@ -1,0 +1,75 @@
+:root {
+    --cl-primary-1: #85586F;
+    --cl-primary-2: #AC7D88;
+    --cl-primary-3: #DEB6AB;
+    --cl-primary-4: #F8ECD1;
+    --dark-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--cl-primary-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #111;
+}
+
+.container {
+    background-color: var(--cl-primary-4);
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: var(--dark-shadow);
+}
+
+header h2 {
+    text-transform: capitalize;
+    color: var(--cl-primary-1);
+}
+
+form {
+    margin-top: 1rem;
+}
+
+form input{
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1.15rem;
+    border-radius: 3px;
+    border: 1px solid var(--cl-primary-3);
+    background-color: var(--cl-primary-4);
+    outline: none;
+}
+input::placeholder {
+    text-transform: capitalize;
+    color:var(--cl-primary-2);
+}
+
+form button {
+    opacity: 0.7;
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: var(--cl-primary-1);
+    border: 0;
+    padding: 0.5rem 1rem;
+    border-radius: 3px;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    color: var(--cl-primary-4);
+    pointer-events: none;
+}
+
+form input:valid ~ button {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+}
