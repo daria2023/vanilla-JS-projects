@@ -114,8 +114,6 @@ form.addEventListener("submit", (e) => {
   let term = input.value;
   fetchData(searchURL + term);
   input.value = "";
-  console.log(document.querySelector('.btns'));
-//   document.querySelector('.btns').innerHTML = '';
 });
 
 fetchData(popularityURL);
