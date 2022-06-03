@@ -41,3 +41,7 @@ some vanilla JS projects recording, hope one day I'd be a master in JS. LOL
 ### 10-web-downloader
 
 - using file address to download files
+
+### 11-qr-reader-and-generator
+
+-using api to generate or read qr

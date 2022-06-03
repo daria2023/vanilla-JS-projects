@@ -61,6 +61,12 @@ const data = [
         des:'using file address to download files',
         img: './images/web-downloader.png',
         url: 'https://daria2023.github.io/vanilla-JS-projects/10-web-downloader/',   
+    },{
+        id: 10,
+        title: 'qr',
+        des:'qr generator and qr reader',
+        img: './images/qr.png',
+        url: 'https://daria2023.github.io/vanilla-JS-projects/11-qr/',   
     },
 ]
 
