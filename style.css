@@ -36,13 +36,13 @@ header {
     border-radius: 5px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
     width:80vw;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display:flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
 .project {
-    width:300px;
+    max-width:300px;
     margin: 0.5rem auto;
     background-color: var(--cl-primary-3);
     border-radius: 5px;
