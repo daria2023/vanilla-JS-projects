@@ -67,7 +67,13 @@ const data = [
         des:'qr generator and qr reader',
         img: './images/qr.png',
         url: 'https://daria2023.github.io/vanilla-JS-projects/11-qr/',   
-    },
+    },{
+        id: 11,
+        title: 'flip-card',
+        des:'flip to check your memory',
+        img:'./images/flip-card.png',
+        url: 'https://daria2023.github.io/vanilla-JS-projects/12-flip-card/'
+    }
 ]
 
 data.map(project => {

@@ -52,7 +52,8 @@ function resortCards() {
     disableDeck = false;
     matchedCards = 0;
     let arr = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8]
-    arr.sort(()=>Math.random > 0.5 ? 1 : -1);
+    arr.sort(() => Math.random() - 0.5)
+    
     cards.forEach((card,idx) => {
         card.classList.remove('flipped');
         let img = card.querySelector('img');
